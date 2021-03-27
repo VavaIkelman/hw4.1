@@ -1,31 +1,12 @@
-import showCurrentHelth from "../js/app.js";
-test ('check healthy', () => {
-const result = showCurrentHelth(100);
+import showHealthLevel from '../js/app';
 
-expect(result).toBe('healthy');
+describe('showHealthLevel:', () => {
+  test.each([
+    [{ name: 'Маг', health: 14 }, 'critical'],
+    [{ name: 'Лучник', health: 15 }, 'wounded'],
+    [{ name: 'Маг', health: 50 }, 'wounded'],
+    [{ name: 'Лучник', health: 51 }, 'healthy'],
+  ])('should expect for %o health level %s)', (obj, expected) => {
+    expect(showHealthLevel(obj)).toBe(expected);
+  });
 });
-
-test ('check wounded', () => {
-    const result = showCurrentHelth(50);
-    
-    expect(result).toBe('wounded');
-    });
-
-    test ('check wounded', () => {
-        const result = showCurrentHelth(16);
-        
-        expect(result).toBe('wounded');
-        });
-
-
-    test ('check critical', () => {
-        const result = showCurrentHelth(15);
-        
-        expect(result).toBe('critical');
-        })
-
-        test ('check critical', () => {
-            const result = showCurrentHelth(14);
-            
-            expect(result).toBe('critical');
-            })

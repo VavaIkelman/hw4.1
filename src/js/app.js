@@ -1,13 +1,8 @@
-export default function showCurrentHelth(persent) {
+export default function showCurrentHelth(obj) {
     let healthType;
-    if (persent >= 50) healthType = "healthy";
-    else if (persent > 15 & persent < 50) healthType = "wounded";
-    else if (persent < 15) healthType = "critical";
+    if (obj.health > 50) healthType = "healthy";
+    else if (obj.health < 15) healthType = "critical";
+    else healthType = "wounded";
 
     return healthType;
 }
-// const heroes = [
-//     {name: 'мечник', health: 10},
-//     {name: 'маг', health: 100},
-//     {name: 'лучник', health: 35},
-//   ];
