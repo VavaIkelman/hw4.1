@@ -6,7 +6,7 @@ const hero = {
     health: 90,
 }
 
-expect(showCurrentHelth(her)).toBe('healthy');
+expect(showCurrentHelth(hero)).toBe('healthy');
 });
 
 test ('check healthy', () => {
